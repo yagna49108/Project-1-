@@ -3,112 +3,282 @@
 
 <head>
     <title>The Web Remembers</title>
+
+    <style>
+
+        body {
+            margin: 0;
+            background-color: #f7f7f7;
+            color: #111111;
+            font-family: Arial, sans-serif;
+        }
+
+        .page {
+            min-height: 100vh;
+            position: relative;
+            overflow: hidden;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .top {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .intro {
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 650px;
+            margin: 0 auto 50px auto;
+        }
+
+        .yellow-box {
+            display: inline-block;
+            background-color: yellow;
+            padding: 12px 20px;
+            font-weight: bold;
+            margin-bottom: 60px;
+        }
+
+        .data {
+            position: absolute;
+            color: #bdbdbd;
+            font-family: monospace;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .data1 {
+            top: 80px;
+            left: 8%;
+        }
+
+        .data2 {
+            top: 170px;
+            right: 12%;
+        }
+
+        .data3 {
+            top: 330px;
+            left: 5%;
+        }
+
+        .data4 {
+            top: 430px;
+            right: 8%;
+        }
+
+        .data5 {
+            bottom: 150px;
+            left: 15%;
+        }
+
+        .data6 {
+            bottom: 80px;
+            right: 20%;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: center;
+            gap: 70px;
+            flex-wrap: wrap;
+            margin: 40px auto;
+            max-width: 1000px;
+        }
+
+        .action {
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 20px;
+            transition: 0.2s;
+            min-width: 220px;
+            text-align: center;
+        }
+
+        .action:hover {
+            background-color: yellow;
+            transform: scale(1.05);
+        }
+
+        .message {
+            margin-top: 10px;
+            font-size: 16px;
+            font-weight: normal;
+            color: #555555;
+        }
+
+        .ending {
+            max-width: 650px;
+            margin: 90px auto 40px auto;
+            text-align: center;
+            font-size: 19px;
+            line-height: 1.6;
+        }
+
+        .inspiration {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .inspiration a {
+            color: #1d70b7;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .inspiration a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
 </head>
+
 
 <body>
 
-    <h1>THE WEB REMEMBERS EVERYTHING YOU DO.</h1>
+    <div class="page">
 
-    <h2>Every Click. Every Search. Every Pause.</h2>
-
-    <p>
-        We use the web every day.
-        We click. We search. We pause.
-        Every action leaves information behind.
-    </p>
-
-    <p>
-        We move through the web without thinking about what happens
-        to the information we leave behind.
-    </p>
-
-    <p>
-        A click becomes data.
-        A search becomes data.
-        A pause becomes data.
-    </p>
+        <div class="data data1">DATA</div>
+        <div class="data data2">Big Data</div>
+        <div class="data data3">DATA</div>
+        <div class="data data4">Big Data</div>
+        <div class="data data5">DATA</div>
+        <div class="data data6">Big Data</div>
 
 
-    <h2>EVERY CLICK.</h2>
+        <div class="top">
 
-    <p>
-        You click a link.
-        You open a page.
-        You move somewhere else.
-    </p>
+            <div class="yellow-box">
+                THE WEB REMEMBERS
+            </div>
 
-    <p>
-        But the web remembers.
-    </p>
+            <h1>
+                EVERYTHING YOU DO.
+            </h1>
 
+            <p class="intro">
+                We use the web without really thinking about everything
+                we leave behind. We click on things, search for things,
+                and sometimes just sit on a page for a while.
+            </p>
 
-    <h2>EVERY SEARCH.</h2>
-
-    <p>
-        You type a question.
-        You look for an answer.
-        You move on.
-    </p>
-
-    <p>
-        But the search does not simply disappear.
-    </p>
+        </div>
 
 
-    <h2>EVERY PAUSE.</h2>
+        <div class="actions">
 
-    <p>
-        You stop.
-        You hesitate.
-        You stay on the page.
-    </p>
+            <div class="action"
+                 onmouseover="showMessage('click')"
+                 onmouseout="hideMessage('click')">
 
-    <p>
-        Even doing nothing can become information.
-    </p>
+                EVERY CLICK.
 
+                <div class="message" id="click">
+                </div>
 
-    <h2>DATA</h2>
-
-    <p>Big Data</p>
-    <p>DATA</p>
-    <p>Big Data</p>
-    <p>DATA</p>
-    <p>Big Data</p>
+            </div>
 
 
-    <h2>WHAT DOES THE WEB REMEMBER?</h2>
+            <div class="action"
+                 onmouseover="showMessage('search')"
+                 onmouseout="hideMessage('search')">
 
-    <p>
-        What you clicked.
-    </p>
+                EVERY SEARCH.
 
-    <p>
-        What you searched.
-    </p>
+                <div class="message" id="search">
+                </div>
 
-    <p>
-        Where you stopped.
-    </p>
-
-    <p>
-        What you ignored.
-    </p>
+            </div>
 
 
-    <h2>THE WEB IS ALWAYS WATCHING.</h2>
+            <div class="action"
+                 onmouseover="showMessage('pause')"
+                 onmouseout="hideMessage('pause')">
 
-    <p>
-        Not with eyes.
-        With information.
-    </p>
+                EVERY PAUSE.
+
+                <div class="message" id="pause">
+                </div>
+
+            </div>
+
+        </div>
 
 
-    <p>
-        <a href="https://molleindustria.org/files/BIG-DATA.html">
-            BIG DATA — INSPIRATION
-        </a>
-    </p>
+        <div class="ending">
+
+            <p>
+                A click might seem like nothing.
+                A search might seem like nothing.
+                Even stopping on a page for a few seconds
+                might seem like nothing.
+            </p>
+
+            <p>
+                But online, these small things can become
+                pieces of information.
+            </p>
+
+            <h2>
+                WHAT DOES THE WEB REMEMBER ABOUT YOU?
+            </h2>
+
+        </div>
+
+
+        <div class="inspiration">
+
+            <p>
+                I started thinking about this idea after looking at:
+            </p>
+
+            <a href="https://molleindustria.org/files/BIG-DATA.html"
+               target="_blank">
+                BIG DATA — Molleindustria
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function showMessage(action) {
+
+            if (action === "click") {
+                document.getElementById("click").innerHTML =
+                    "You clicked. We noticed.";
+            }
+
+            if (action === "search") {
+                document.getElementById("search").innerHTML =
+                    "You searched. We remember.";
+            }
+
+            if (action === "pause") {
+                document.getElementById("pause").innerHTML =
+                    "You stopped here. That can matter too.";
+            }
+
+        }
+
+
+        function hideMessage(action) {
+            document.getElementById(action).innerHTML = "";
+        }
+
+    </script>
 
 </body>
 
